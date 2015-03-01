@@ -1,0 +1,6 @@
+/* Стилизация шапки */
+.main-header {
+  background: #2b3b4b url("../img/background-fullsize.jpg") no-repeat;
+  background-position: top center;
+  background-size: cover;
+}

@@ -1,0 +1,107 @@
+/* Стилизация меню */ 
+
+.main-menu{
+
+  &_link{
+    width: 100%;
+    display: block;
+    background-color: #283645;
+    border-bottom: 1px solid #000;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+
+    a{
+      color: #fff;
+      padding: 10px;
+      display: block;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 32px;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: 0.2s ease color;
+    }
+
+    &:hover a{
+      color: #d22856;
+    }
+  }
+
+  input[type=checkbox] {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  label { 
+    display: none;
+    // cursor: pointer;
+    user-select: none;
+    position: relative;
+  }
+
+  &_logo{
+    width: 75px;
+    height: 24px;
+    position: absolute;
+    top: 50%; left: 20px;
+    transform: translateY(-50%);
+    a{ display: block; }
+    path{ fill: #fff; }
+  }
+
+  &_burger{
+    width: 50px;
+    height: 24px;
+    cursor: pointer;
+    position: absolute; 
+    top: 50%; right: 20px;
+    transform: translateY(-50%);
+
+    path{ 
+      fill: #fff; 
+      transition: 0.2s ease all;
+
+      &:hover{
+        fill: #d22856;
+      }
+      &:active, .active{
+        fill: rgba(210, 40, 86, 0.3);
+      }
+    }
+  }
+
+}
+
+
+/* Стилизация мобильного меню */ 
+
+nav[role="custom-dropdown"] {
+  width: 100%;
+  position: relative;
+  text-align: center;
+
+  ul {
+    display: none;
+    height: 100%;
+  }
+
+  label {
+    width: 100%;
+    display: block;
+    min-height: 68px;
+    background: rgba(40, 54, 69, 0.3);
+  }
+    
+  input[type=checkbox]:checked ~ label .main-menu_burger {
+    
+  }
+      
+  input[type=checkbox]:checked ~ ul {
+    display: block;         
+  }
+  
+  input[type=checkbox]:checked ~ label {
+    background: #283645;
+    border-bottom: 1px solid #000;        
+  }
+}
